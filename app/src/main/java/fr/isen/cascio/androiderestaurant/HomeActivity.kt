@@ -3,6 +3,9 @@ package fr.isen.cascio.androiderestaurant
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.denzcoskun.imageslider.ImageSlider
+import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.models.SlideModel
 import fr.isen.cascio.androiderestaurant.databinding.ActivityHomeBinding
 
 class HomeActivity : BaseActivity() {
@@ -24,6 +27,16 @@ class HomeActivity : BaseActivity() {
         binding.dessert.setOnClickListener {
             startCategoryActivity(ItemType.DESSERT)
         }
+
+        val imageSlider = findViewById<ImageSlider>(R.id.imageSlider)
+        val imageList = ArrayList<SlideModel>()
+
+        imageList.add(SlideModel("https://cdn.pixabay.com/photo/2021/07/19/16/04/pizza-6478478_960_720.jpg"))
+        imageList.add(SlideModel("https://cdn.pixabay.com/photo/2019/01/29/18/05/burger-3962996_960_720.jpg"))
+        imageList.add(SlideModel("https://cdn.pixabay.com/photo/2017/02/15/10/39/salad-2068220_960_720.jpg"))
+        imageList.add(SlideModel("https://cdn.pixabay.com/photo/2017/05/07/08/56/pancakes-2291908_960_720.jpg"))
+
+        imageSlider.setImageList(imageList,ScaleTypes.CENTER_CROP)
 
     }
 
