@@ -1,22 +1,13 @@
 package fr.isen.cascio.androiderestaurant.detail
 
-import android.content.Context
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import androidx.appcompat.app.AlertDialog
 import fr.isen.cascio.androiderestaurant.BaseActivity
-import fr.isen.cascio.androiderestaurant.CategoryActivity
-import fr.isen.cascio.androiderestaurant.HomeActivity
 import fr.isen.cascio.androiderestaurant.R
 import fr.isen.cascio.androiderestaurant.basket.Basket
 import fr.isen.cascio.androiderestaurant.basket.BasketItem
 import fr.isen.cascio.androiderestaurant.databinding.ActivityDetailBinding
 import fr.isen.cascio.androiderestaurant.network.Dish
 import com.google.android.material.snackbar.Snackbar
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 import kotlin.math.max
 
 class DetailActivity : BaseActivity() {
@@ -33,23 +24,23 @@ class DetailActivity : BaseActivity() {
 
         val dish = intent.getSerializableExtra(DISH_EXTRA) as? Dish
         dish?.let {
-            setupView(it)
+            setupContent(it)
         }
         val fragment = DetailViewFragment(dish)
         supportFragmentManager.beginTransaction().add(R.id.fragmentContainer, fragment).commit()
     }
 
-    private fun setupView(dish: Dish) {
-        refreshShop(dish)
+    private fun setupContent(dish: Dish) {
+        refreshShopButton(dish)
 
         binding.less.setOnClickListener {
             itemCount = max(1, itemCount - 1)
-            refreshShop(dish)
+            refreshShopButton(dish)
         }
 
         binding.more.setOnClickListener {
             itemCount += 1
-            refreshShop(dish)
+            refreshShopButton(dish)
         }
 
         binding.shopButton.setOnClickListener {
@@ -57,7 +48,7 @@ class DetailActivity : BaseActivity() {
         }
     }
 
-    private fun refreshShop(dish: Dish) {
+    private fun refreshShopButton(dish: Dish) {
         val price = itemCount * dish.prices.first().price.toFloat()
         binding.itemCount.text = itemCount.toString()
         binding.shopButton.text = "${getString(R.string.total)} $price€"
@@ -72,6 +63,6 @@ class DetailActivity : BaseActivity() {
     }
 
     private fun refreshMenu(basket: Basket) {
-        invalidateOptionsMenu() // refresh l'affichage du menu
+        invalidateOptionsMenu()
     }
 }

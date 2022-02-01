@@ -14,7 +14,7 @@ import com.squareup.picasso.Picasso
 
 interface BasketCellInterface {
     fun onDeleteItem(item: BasketItem)
-    fun onShowDetail(item: BasketItem) // Optional
+    fun onShowDetail(item: BasketItem)
 }
 
 class BasketAdapter(private val basket: Basket,
@@ -39,7 +39,6 @@ class BasketAdapter(private val basket: Basket,
                 .placeholder(R.drawable.android_logo_restaurant)
                 .into(itemImageView)
             deleteButton.setOnClickListener {
-                //delegate.onDeleteItem(item)
                 delegate.onDeleteItem(item)
             }
         }
@@ -52,7 +51,6 @@ class BasketAdapter(private val basket: Basket,
     override fun onBindViewHolder(holder: BasketViewHolder, position: Int) {
         val item = basket.items[position]
         holder.layout.setOnClickListener {
-            // Click sur detail item
             delegate.onShowDetail(item)
         }
         holder.bind(item, context, delegate)

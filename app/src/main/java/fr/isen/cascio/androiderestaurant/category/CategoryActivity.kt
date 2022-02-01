@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.models.SlideModel
 import fr.isen.cascio.androiderestaurant.category.CategoryAdapter
 import fr.isen.cascio.androiderestaurant.databinding.ActivityCategoryBinding
 import fr.isen.cascio.androiderestaurant.detail.DetailActivity
@@ -35,7 +37,7 @@ enum class ItemType {
 }
 
 class CategoryActivity : BaseActivity() {
-
+    private var imageList = ArrayList<SlideModel>()
     private lateinit var bindind: ActivityCategoryBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,10 +54,18 @@ class CategoryActivity : BaseActivity() {
 
         bindind.categoryTitle.text = getCategoryTitle(selectedItem)
 
+
         loadList(listOf<Dish>())
 
         makeRequest(selectedItem)
         Log.d("lifecycle", "onCreate")
+
+        val imageSlider = bindind.imageSliderFavorite
+        for(dishe in listOf<Dish>()){
+            imageList.add(SlideModel(dishe.getThumbnailUrl()))
+        }
+        imageList.add(SlideModel("https://cdn.pixabay.com/photo/2017/02/15/10/39/salad-2068220_960_720.jpg"))
+        imageSlider.setImageList(imageList, ScaleTypes.CENTER_CROP)
     }
 
     private fun makeRequest(selectedItem: ItemType?) {

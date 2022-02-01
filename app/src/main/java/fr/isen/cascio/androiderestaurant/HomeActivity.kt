@@ -1,9 +1,7 @@
 package fr.isen.cascio.androiderestaurant
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import fr.isen.cascio.androiderestaurant.databinding.ActivityHomeBinding
@@ -28,7 +26,7 @@ class HomeActivity : BaseActivity() {
             startCategoryActivity(ItemType.DESSERT)
         }
 
-        val imageSlider = findViewById<ImageSlider>(R.id.imageSlider)
+        val imageSlider = binding.imageSlider
         val imageList = ArrayList<SlideModel>()
 
         imageList.add(SlideModel("https://cdn.pixabay.com/photo/2017/02/15/10/39/salad-2068220_960_720.jpg"))

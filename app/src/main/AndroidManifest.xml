@@ -16,7 +16,7 @@
         <activity android:name=".basket.BasketActivity" />
         <activity android:name=".detail.DetailActivity" />
         <activity android:name=".CategoryActivity" />
-        <activity android:name=".HomeActivity">
+        <activity android:name=".HomeActivity" android:theme="@style/NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
