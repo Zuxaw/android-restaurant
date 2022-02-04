@@ -1,18 +1,19 @@
 package fr.isen.cascio.androiderestaurant
 
+import android.app.ActionBar
 import android.content.Context
 import android.content.Intent
 import android.util.Log
 import android.view.Menu
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.isVisible
 import fr.isen.cascio.androiderestaurant.basket.Basket
 import fr.isen.cascio.androiderestaurant.basket.BasketActivity
 import fr.isen.cascio.androiderestaurant.detail.DetailActivity
 
 open class BaseActivity: AppCompatActivity() {
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
         val menuView = menu?.findItem(R.id.basket)?.actionView
