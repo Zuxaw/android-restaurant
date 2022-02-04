@@ -61,11 +61,9 @@ class CategoryActivity : BaseActivity() {
         Log.d("lifecycle", "onCreate")
 
         val imageSlider = bindind.imageSliderFavorite
-        for(dishe in listOf<Dish>()){
-            imageList.add(SlideModel(dishe.getThumbnailUrl()))
-        }
         imageList.add(SlideModel("https://cdn.pixabay.com/photo/2017/02/15/10/39/salad-2068220_960_720.jpg"))
         imageSlider.setImageList(imageList, ScaleTypes.CENTER_CROP)
+
     }
 
     private fun makeRequest(selectedItem: ItemType?) {
