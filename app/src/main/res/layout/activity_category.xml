@@ -9,19 +9,23 @@
 
     <com.denzcoskun.imageslider.ImageSlider
         android:id="@+id/imageSliderFavorite"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
+
+        android:layout_width="335dp"
+        android:layout_height="294dp"
+        android:layout_marginTop="30dp"
         app:iss_auto_cycle="true"
-        app:iss_corner_radius="5"
+        app:iss_corner_radius="20"
         app:iss_delay="0"
         app:iss_error_image="@android:color/darker_gray"
         app:iss_period="1500"
         app:iss_placeholder="@android:color/darker_gray"
         app:iss_selected_dot="@drawable/default_selected_dot"
         app:iss_unselected_dot="@drawable/default_unselected_dot"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="74dp">
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
 
     </com.denzcoskun.imageslider.ImageSlider>
 
@@ -37,6 +41,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/category_title">
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"

@@ -7,6 +7,14 @@
         android:id="@+id/basket"
         android:icon="@drawable/ic_cart"
         android:title="@string/basket"
+        app:actionLayout="@layout/menu_basket"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/home"
+        android:actionLayout="@layout/activity_home"
         app:showAsAction="always"
-        app:actionLayout="@layout/menu_basket"/>
+        android:title="home" />
+
 </menu>

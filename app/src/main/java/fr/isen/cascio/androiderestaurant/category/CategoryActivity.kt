@@ -89,6 +89,7 @@ class CategoryActivity : BaseActivity() {
                         bindind.swipeLayout.isRefreshing = false
                         cacheResult(response.toString())
                         parseResult(response.toString(), selectedItem)
+                        Log.d("cc","cc")
                     },
                     { error ->
                         loader.hide(this)
