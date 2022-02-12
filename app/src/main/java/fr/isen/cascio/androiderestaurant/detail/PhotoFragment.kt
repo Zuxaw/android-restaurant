@@ -27,7 +27,7 @@ class PhotoFragment : Fragment() {
         val url = arguments?.getString(URL)
 
         if(url?.isNotEmpty() == true) {
-            Picasso.get().load(url).placeholder(R.drawable.android_logo_restaurant).into(binding.photo)
+            Picasso.get().load(url).placeholder(R.drawable.logo_restaurant).into(binding.photo)
         }
     }
 

@@ -2,7 +2,6 @@ package fr.isen.cascio.androiderestaurant.category
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ExpandableListView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -41,7 +40,7 @@ class CategoryAdapter(private val entries: List<Dish>,
             priceView.text = "${dish.prices.first().price} €" // dish.prices.first().price + " €"
             Picasso.get()
                 .load(dish.getThumbnailUrl())
-                .placeholder(R.drawable.android_logo_restaurant)
+                .placeholder(R.drawable.logo_restaurant)
                 .into(imageView)
         }
     }

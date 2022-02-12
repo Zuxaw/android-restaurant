@@ -1,7 +1,6 @@
 package fr.isen.cascio.androiderestaurant.basket
 
 import android.content.Context
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -36,7 +35,7 @@ class BasketAdapter(private val basket: Basket,
             itemQuantity.text = "${context.getString(R.string.quantity)} ${item.count.toString()}"
             Picasso.get()
                 .load(item.dish.getThumbnailUrl())
-                .placeholder(R.drawable.android_logo_restaurant)
+                .placeholder(R.drawable.logo_restaurant)
                 .into(itemImageView)
             deleteButton.setOnClickListener {
                 delegate.onDeleteItem(item)

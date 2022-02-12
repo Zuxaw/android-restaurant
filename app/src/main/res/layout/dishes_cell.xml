@@ -25,7 +25,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/android_logo_restaurant" />
+            app:srcCompat="@drawable/logo_restaurant" />
 
         <TextView
             android:id="@+id/dishesTitle"
@@ -46,6 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="TextView"
+            android:textColor="@color/green_300"
             app:layout_constraintBottom_toBottomOf="@+id/dishImageView"
             app:layout_constraintStart_toEndOf="@+id/dishImageView" />
     </androidx.constraintlayout.widget.ConstraintLayout>

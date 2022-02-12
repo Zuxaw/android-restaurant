@@ -61,7 +61,11 @@ class CategoryActivity : BaseActivity() {
         Log.d("lifecycle", "onCreate")
 
         val imageSlider = bindind.imageSliderFavorite
-        imageList.add(SlideModel("https://cdn.pixabay.com/photo/2017/02/15/10/39/salad-2068220_960_720.jpg"))
+        imageList.add(SlideModel("https://cdn.pixabay.com/photo/2021/03/16/10/04/street-6099209_960_720.jpg"))
+        imageList.add(SlideModel("https://cdn.pixabay.com/photo/2016/11/18/14/05/brick-wall-1834784_960_720.jpg"))
+        imageList.add(SlideModel("https://cdn.pixabay.com/photo/2014/09/17/20/26/restaurant-449952_960_720.jpg"))
+        imageList.add(SlideModel("https://cdn.pixabay.com/photo/2020/04/17/12/49/barista-5055060_960_720.jpg"))
+
         imageSlider.setImageList(imageList, ScaleTypes.CENTER_CROP)
 
     }
